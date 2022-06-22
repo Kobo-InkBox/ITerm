@@ -9,7 +9,7 @@
 #include <QString>
 
 extern "C" {
-#include <vterm.h>
+#include "../ext/libvterm/include/vterm.h"
 }
 
 class QKeyEvent;

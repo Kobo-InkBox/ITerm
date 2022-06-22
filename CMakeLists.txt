@@ -43,7 +43,7 @@ find_package(Qt5Widgets REQUIRED)
 set(CMAKE_INCLUDE_CURRENT_DIR YES)
 set(CMAKE_AUTOMOC YES)
 
-add_compile_options(-march=native)
+#add_compile_options(-march=armv7)
 #link_libraries(-pg -lprofiler)
 #add_compile_options(-pg)
 

@@ -9,7 +9,7 @@
 class QDebug;
 
 extern "C" {
-#include <vterm.h>
+#include "../ext/libvterm/include/vterm.h"
 }
 
 /**
