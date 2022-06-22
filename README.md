@@ -1,5 +1,8 @@
 # SFF
 
+## Cross-compiling credits
+[@Szybet](https://github.com/Szybet) for helping in the process.
+
 ### What is this?
 A terminal emulator that I'm
 [dogfooding](http://www.catb.org/~esr/jargon/html/D/dogfood.html) daily.
