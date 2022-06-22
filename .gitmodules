@@ -1,3 +1,0 @@
-[submodule "ext/libvterm"]
-	path = ext/libvterm
-	url = ../libvterm
