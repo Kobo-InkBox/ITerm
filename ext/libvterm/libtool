@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 # Generated automatically by config.status (libtool) 2.4.6
 # Libtool was configured on host buildvm-x86-04.iad2.fedoraproject.org:
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
