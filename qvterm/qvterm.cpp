@@ -193,13 +193,13 @@ QVTerm::QVTerm(QWidget *parent) :
     setColor(14, 0x71, 0xbe, 0xbe);
     setColor(7, 0xbe, 0xbe, 0xbe);
     setColor(15, 0xff, 0xff, 0xff);
-    vterm_color_rgb(&fg, 0xbe, 0xbe, 0xbe);
-    vterm_color_rgb(&bg, 0x26, 0x26, 0x26);
+    vterm_color_rgb(&fg, 0x00, 0x00, 0x00);
+    vterm_color_rgb(&bg, 0xff, 0xff, 0xff);
 #else // gruvbox
-    vterm_color_rgb(&fg, 0xeb, 0xdb, 0xbd);
+    vterm_color_rgb(&fg, 0x00, 0x00, 0x00);
     // hard vterm_color_rgb(&bg, 0x1d, 0x20, 0x21);
     // soft vterm_color_rgb(&bg, 0x32, 0x30, 0x2f);
-    vterm_color_rgb(&bg, 0x28, 0x28, 0x28);
+    vterm_color_rgb(&bg, 0xff, 0xff, 0xff);
     //setColor(0, 0x28, 0x28, 0x28);
     setColor(0, 0x92, 0x83, 0x74);
     setColor(8, 0x92, 0x83, 0x74);
@@ -631,7 +631,7 @@ void QVTerm::paintEvent(QPaintEvent *event)
             && event->rect().contains(pixelCol(m_cursor.col), pixelRow(m_cursor.row))) {
         const VTermScreenCell *cell = fetchCell(m_cursor.col, m_cursor.row);
         auto rect = pixelRect(m_cursor.col, m_cursor.row, cell->width, 1);
-        p.fillRect(rect, QColor(qRgb(0x40, 0x40, 0x40)));
+        p.fillRect(rect, QColor(qRgb(0x00, 0x00, 0x00)));
         if (cell->chars[0]) {
             p.setPen(toQColor(defaultBg));
             p.drawText(
