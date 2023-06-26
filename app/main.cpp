@@ -1,13 +1,14 @@
 #include <QApplication>
-#include <QClipboard>
 #include <QDebug>
 #include <QMainWindow>
 #include <QRegularExpression>
 #include <QShortcut>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include <QKeyEvent>
 
 #include <qvterm.hpp>
 
-// clang-format off
 constexpr const char *urlMatch =
     R"((?:https?://|ftp://|news://|mailto:|file://|\bwww\.))"
     R"([\w\-\@;\/?:&=%\$.+!*\x27,~#]*)"
@@ -16,17 +17,24 @@ constexpr const char *urlMatch =
         "|"
         R"([\w\-\@;\/?:&=%\$+*~])"
     ")+";
-// clang-format on
 
 int main(int argc, char **argv)
 {
-    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling, true);
     QApplication app(argc, argv);
 
     QMainWindow win{};
+    QWidget centralWidget{};
+    QVBoxLayout layout{};
     QVTerm qvterm{};
+    QPushButton button{"Resize Me"};
 
-    win.setCentralWidget(&qvterm);
+    layout.addWidget(&qvterm);
+    layout.addWidget(&button);
+    layout.setStretch(0, 1); // Expand the terminal widget
+    layout.setMargin(0);
+
+    centralWidget.setLayout(&layout);
+    win.setCentralWidget(&centralWidget);
     win.show();
 
     qvterm.start();
@@ -65,4 +73,6 @@ int main(int argc, char **argv)
     });
 
     app.exec();
+
+    return 0;
 }
