@@ -1,0 +1,13 @@
+{
+  "app": {
+    "Author": "jsbronder/tux-linux",
+    "AuthorContact": "nicolecrivain@gmail.com / GitHub:jsbronder (sff)",
+    "Enabled": true,
+    "ExecPath": "/app-bin/ITerm.sh",
+    "IconPath": "/app-misc/ITerm.png",
+    "Name": "ITerm",
+    "SupportedDevices": [ "all" ],
+    "RequiredFeatures": [ 2 ],
+    "Version": "1.0"
+  }
+}
