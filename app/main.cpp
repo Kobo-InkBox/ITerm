@@ -8,6 +8,7 @@
 #include <QKeyEvent>
 
 #include <qvterm.hpp>
+#include <virtualkeyboard.h>
 
 constexpr const char *urlMatch =
     R"((?:https?://|ftp://|news://|mailto:|file://|\bwww\.))"
@@ -26,10 +27,10 @@ int main(int argc, char **argv)
     QWidget centralWidget{};
     QVBoxLayout layout{};
     QVTerm qvterm{};
-    QPushButton button{"Resize Me"};
+    virtualkeyboard virtualKeyboard;
 
     layout.addWidget(&qvterm);
-    layout.addWidget(&button);
+    layout.addWidget(&virtualKeyboard);
     layout.setStretch(0, 1); // Expand the terminal widget
     layout.setMargin(0);
 
@@ -70,6 +71,13 @@ int main(int argc, char **argv)
 
         esc.setEnabled(true);
         qvterm.match(&re);
+    });
+
+    QObject::connect(&virtualKeyboard, &virtualkeyboard::pressKey, [&qvterm, &virtualKeyboard]() {
+        if(virtualKeyboard.currentKeyboardModifier == Qt::ShiftModifier) {
+            virtualKeyboard.currentText = virtualKeyboard.currentText.toUpper();
+        }
+        qvterm.pressKey(virtualKeyboard.currentKey, virtualKeyboard.currentKeyboardModifier, virtualKeyboard.currentText);
     });
 
     app.exec();

@@ -1,2 +1,2 @@
-add_executable(sff main.cpp)
+add_executable(sff virtualkeyboard.cpp main.cpp)
 target_link_libraries(sff qvterm)

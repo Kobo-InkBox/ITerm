@@ -54,6 +54,7 @@ public:
     void scrollPage(int pages);
     void setFont(const QFont &font);
     void start();
+    void pressKey(Qt::Key key, Qt::KeyboardModifier modifier, QString text);
 
 signals:
     void iconTextChanged(QString iconText);

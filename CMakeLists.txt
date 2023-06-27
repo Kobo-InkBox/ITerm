@@ -10,7 +10,7 @@ if (NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE RelWithDebInfo CACHE STRING "" FORCE)
 endif()
 
-set(warning_flags "-Wall -Wconversion -Werror -Wextra -fPIC")
+set(warning_flags "-Wall -Wconversion -Wextra -fPIC")
 string(REPLACE " " ";" cxx_warning_flags "${warning_flags}")
 add_compile_options(
     "$<$<COMPILE_LANGUAGE:CXX>:${cxx_warning_flags}>"

@@ -44,13 +44,13 @@ VTermModifier vtermModifier(int mod)
 {
     int ret = VTERM_MOD_NONE;
 
-    if (mod & Qt::SHIFT)
+    if (mod & Qt::ShiftModifier)
         ret |= VTERM_MOD_SHIFT;
 
-    if (mod & Qt::ALT)
+    if (mod & Qt::AltModifier)
         ret |= VTERM_MOD_ALT;
 
-    if (mod & Qt::CTRL)
+    if (mod & Qt::ControlModifier)
         ret |= VTERM_MOD_CTRL;
 
     return static_cast<VTermModifier>(ret);
@@ -428,13 +428,23 @@ void QVTerm::keyPressEvent(QKeyEvent *event)
     VTermModifier mod = vtermModifier(event->modifiers());
     VTermKey key = vtermKey(event->key(), keypad);
 
-    if (key != VTERM_KEY_NONE) {
+    if (mod == VTERM_MOD_CTRL && event->key() >= Qt::Key_A && event->key() <= Qt::Key_Z) {
+        // ChatGPT deserves full credit for this code block
+        // Ctrl + letter combination was pressed
+        QChar letter = event->text().at(0);
+        int keyCode = static_cast<int>(letter.toLatin1());
+        int controlCode = 0x1F & keyCode;
+
+        vterm_keyboard_unichar(m_vterm, controlCode, VTERM_MOD_NONE);
+    }
+    else if (key != VTERM_KEY_NONE) {
         if (mod == VTERM_MOD_SHIFT
                 && (key == VTERM_KEY_ESCAPE || key == VTERM_KEY_BACKSPACE))
             mod = VTERM_MOD_NONE;
 
         vterm_keyboard_key(m_vterm, key, mod);
-    } else if (event->text().length()) {
+    }
+    else if (event->text().length()) {
         // This maps to delete word and is way to easy to mistakenly type
         if (event->key() == Qt::Key_Space && mod == VTERM_MOD_SHIFT)
             mod = VTERM_MOD_NONE;
@@ -461,6 +471,7 @@ void QVTerm::keyPressEvent(QKeyEvent *event)
 void QVTerm::mouseMoveEvent(QMouseEvent *event)
 {
     event->accept();
+
     if (!QRect(QPoint(), size()).contains(event->pos()))
         return;
 
@@ -913,4 +924,8 @@ int QVTerm::pixelCol(int x) const
 int QVTerm::pixelRow(int y) const
 {
     return y * m_cellSize.height();
+}
+
+void QVTerm::pressKey(Qt::Key key, Qt::KeyboardModifier modifier, QString text) {
+    qApp->postEvent(this, new QKeyEvent(QEvent::KeyPress, key, modifier, text));
 }
