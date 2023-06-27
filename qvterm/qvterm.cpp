@@ -162,7 +162,7 @@ QVTerm::QVTerm(QWidget *parent) :
     setFrameStyle(QFrame::NoFrame);
     setAttribute(Qt::WA_OpaquePaintEvent);
 
-    setFont(QFont("Monospace", 8));
+    setFont(QFont("Roboto Mono", 7));
     setFocus();
 
     VTermState *vts = vterm_obtain_state(m_vterm);

@@ -20,6 +20,7 @@ public:
     ~virtualkeyboard();
     bool shift = false;
     bool ctrl = false;
+    bool shown = true;
     QString ctrlBtnStyleSheet;
     bool specialCharacters = false;
     bool embed;
@@ -41,6 +42,8 @@ private slots:
     void on_shiftBtn_clicked();
     void on_ctrlBtn_clicked();
     void on_sat_clicked();
+    void on_hideBtn_clicked();
+    void on_showBtn_clicked();
     void adjust_size_function();
 
 private:

@@ -21,27 +21,218 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="leftMargin">
-    <number>0</number>
+    <number>15</number>
    </property>
    <property name="topMargin">
-    <number>0</number>
+    <number>15</number>
    </property>
    <property name="rightMargin">
-    <number>0</number>
+    <number>15</number>
    </property>
    <property name="bottomMargin">
-    <number>0</number>
+    <number>15</number>
    </property>
+   <item>
+    <widget class="Line" name="line">
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+     <property name="lineWidth">
+      <number>5</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
    <item>
     <widget class="QStackedWidget" name="mainWidget">
      <widget class="QWidget" name="page_7">
       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <layout class="QGridLayout" name="gridLayout_7">
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item row="1" column="2">
+          <widget class="QPushButton" name="leftArrowBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>←</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="ctrlBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Ctrl</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="escBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Esc</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="tabBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Tab</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QPushButton" name="endBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>End</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QPushButton" name="upArrowBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>↑</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="duplicateForwardSlashBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>/</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QPushButton" name="homeBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>Home</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QPushButton" name="downArrowBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>↓</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QPushButton" name="rightArrowBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>→</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="5">
+          <widget class="QPushButton" name="pageUpBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>PgUp</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="5">
+          <widget class="QPushButton" name="pageDownBtn">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>PgDn</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
        <item>
         <layout class="QGridLayout" name="gridLayout">
          <property name="bottomMargin">
           <number>0</number>
          </property>
-         <item row="1" column="2">
+         <item row="1" column="1">
           <widget class="QStackedWidget" name="stackedWidget">
            <property name="lineWidth">
             <number>0</number>
@@ -67,24 +258,10 @@
               <layout class="QGridLayout" name="gridLayout_3">
                <item row="13" column="3">
                 <layout class="QGridLayout" name="gridLayout_4">
-                 <item row="6" column="4">
-                  <widget class="QPushButton" name="lf">
-                   <property name="text">
-                    <string>f</string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="6" column="2">
                   <widget class="QPushButton" name="ls">
                    <property name="text">
                     <string>s</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="9">
-                  <widget class="QPushButton" name="li">
-                   <property name="text">
-                    <string>i</string>
                    </property>
                   </widget>
                  </item>
@@ -95,17 +272,17 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="7" column="2">
-                  <widget class="QPushButton" name="lz">
+                 <item row="7" column="7">
+                  <widget class="QPushButton" name="lb">
                    <property name="text">
-                    <string>z</string>
+                    <string>b</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="10">
-                  <widget class="QPushButton" name="n9">
+                 <item row="0" column="3">
+                  <widget class="QPushButton" name="n3">
                    <property name="text">
-                    <string>9</string>
+                    <string>3</string>
                    </property>
                   </widget>
                  </item>
@@ -116,24 +293,10 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="6" column="8">
-                  <widget class="QPushButton" name="lj">
+                 <item row="7" column="12">
+                  <widget class="QPushButton" name="eraseBtn">
                    <property name="text">
-                    <string>j</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="6">
-                  <widget class="QPushButton" name="lt">
-                   <property name="text">
-                    <string>t</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="7">
-                  <widget class="QPushButton" name="n6">
-                   <property name="text">
-                    <string>6</string>
+                    <string>⌫</string>
                    </property>
                   </widget>
                  </item>
@@ -144,45 +307,17 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="6" column="12">
-                  <widget class="QPushButton" name="sat">
+                 <item row="6" column="6">
+                  <widget class="QPushButton" name="lg">
                    <property name="text">
-                    <string>#?</string>
+                    <string>g</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="1">
-                  <widget class="QPushButton" name="n1">
+                 <item row="7" column="6">
+                  <widget class="QPushButton" name="lv">
                    <property name="text">
-                    <string>1</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="8">
-                  <widget class="QPushButton" name="ln">
-                   <property name="text">
-                    <string>n</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="10">
-                  <widget class="QPushButton" name="lo">
-                   <property name="text">
-                    <string>o</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="7">
-                  <widget class="QPushButton" name="lb">
-                   <property name="text">
-                    <string>b</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="12">
-                  <widget class="QPushButton" name="n0">
-                   <property name="text">
-                    <string>0</string>
+                    <string>v</string>
                    </property>
                   </widget>
                  </item>
@@ -193,59 +328,17 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="7" column="10">
-                  <widget class="QPushButton" name="spt">
+                 <item row="6" column="12">
+                  <widget class="QPushButton" name="sat">
                    <property name="text">
-                    <string>.</string>
+                    <string>#?</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="6" column="10">
-                  <widget class="QPushButton" name="ll">
+                 <item row="0" column="12">
+                  <widget class="QPushButton" name="n0">
                    <property name="text">
-                    <string>l</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="8">
-                  <widget class="QPushButton" name="lu">
-                   <property name="text">
-                    <string>u</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="8">
-                  <widget class="QPushButton" name="n7">
-                   <property name="text">
-                    <string>7</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="4">
-                  <widget class="QPushButton" name="lc">
-                   <property name="text">
-                    <string>c</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="12">
-                  <widget class="QPushButton" name="lp">
-                   <property name="text">
-                    <string>p</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="7">
-                  <widget class="QPushButton" name="lh">
-                   <property name="text">
-                    <string>h</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="6">
-                  <widget class="QPushButton" name="lv">
-                   <property name="text">
-                    <string>v</string>
+                    <string>0</string>
                    </property>
                   </widget>
                  </item>
@@ -263,24 +356,17 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="2">
-                  <widget class="QPushButton" name="lw">
+                 <item row="7" column="10">
+                  <widget class="QPushButton" name="spt">
                    <property name="text">
-                    <string>w</string>
+                    <string>.</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="2" column="7">
-                  <widget class="QPushButton" name="ly">
+                 <item row="7" column="2">
+                  <widget class="QPushButton" name="lz">
                    <property name="text">
-                    <string>y</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="6" column="9">
-                  <widget class="QPushButton" name="lk">
-                   <property name="text">
-                    <string>k</string>
+                    <string>z</string>
                    </property>
                   </widget>
                  </item>
@@ -291,31 +377,45 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="7" column="12">
-                  <widget class="QPushButton" name="eraseBtn">
+                 <item row="6" column="10">
+                  <widget class="QPushButton" name="ll">
                    <property name="text">
-                    <string>⌫</string>
+                    <string>l</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="3">
-                  <widget class="QPushButton" name="n3">
+                 <item row="6" column="4">
+                  <widget class="QPushButton" name="lf">
                    <property name="text">
-                    <string>3</string>
+                    <string>f</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="6" column="6">
-                  <widget class="QPushButton" name="lg">
+                 <item row="2" column="6">
+                  <widget class="QPushButton" name="lt">
                    <property name="text">
-                    <string>g</string>
+                    <string>t</string>
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="4">
-                  <widget class="QPushButton" name="n4">
+                 <item row="2" column="10">
+                  <widget class="QPushButton" name="lo">
                    <property name="text">
-                    <string>4</string>
+                    <string>o</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="8">
+                  <widget class="QPushButton" name="lu">
+                   <property name="text">
+                    <string>u</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="7">
+                  <widget class="QPushButton" name="n6">
+                   <property name="text">
+                    <string>6</string>
                    </property>
                   </widget>
                  </item>
@@ -333,10 +433,31 @@
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="2">
-                  <widget class="QPushButton" name="n2">
+                 <item row="7" column="4">
+                  <widget class="QPushButton" name="lc">
                    <property name="text">
-                    <string>2</string>
+                    <string>c</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="8">
+                  <widget class="QPushButton" name="lj">
+                   <property name="text">
+                    <string>j</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="9">
+                  <widget class="QPushButton" name="lk">
+                   <property name="text">
+                    <string>k</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QPushButton" name="n1">
+                   <property name="text">
+                    <string>1</string>
                    </property>
                   </widget>
                  </item>
@@ -344,6 +465,76 @@
                   <widget class="QPushButton" name="shiftBtn">
                    <property name="text">
                     <string>⇧</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="9">
+                  <widget class="QPushButton" name="li">
+                   <property name="text">
+                    <string>i</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="8">
+                  <widget class="QPushButton" name="ln">
+                   <property name="text">
+                    <string>n</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="8">
+                  <widget class="QPushButton" name="n7">
+                   <property name="text">
+                    <string>7</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="7">
+                  <widget class="QPushButton" name="ly">
+                   <property name="text">
+                    <string>y</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="12">
+                  <widget class="QPushButton" name="lp">
+                   <property name="text">
+                    <string>p</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QPushButton" name="lw">
+                   <property name="text">
+                    <string>w</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="7">
+                  <widget class="QPushButton" name="lh">
+                   <property name="text">
+                    <string>h</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QPushButton" name="n2">
+                   <property name="text">
+                    <string>2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
+                  <widget class="QPushButton" name="n4">
+                   <property name="text">
+                    <string>4</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="10">
+                  <widget class="QPushButton" name="n9">
+                   <property name="text">
+                    <string>9</string>
                    </property>
                   </widget>
                  </item>
@@ -356,83 +547,12 @@
            <widget class="QWidget" name="page_2"/>
           </widget>
          </item>
-         <item row="1" column="3">
-          <widget class="QStackedWidget" name="rightSpacerWidget">
-           <widget class="QWidget" name="page_11">
-            <layout class="QVBoxLayout" name="verticalLayout_5">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <spacer name="rightSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="page_12"/>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QStackedWidget" name="leftSpacerWidget">
-           <widget class="QWidget" name="page_9">
-            <layout class="QVBoxLayout" name="verticalLayout_4">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <spacer name="leftSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeType">
-                <enum>QSizePolicy::Expanding</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </widget>
-           <widget class="QWidget" name="page_10"/>
-          </widget>
-         </item>
-         <item row="2" column="2">
+         <item row="2" column="1">
           <layout class="QGridLayout" name="gridLayout_2">
            <property name="bottomMargin">
             <number>0</number>
            </property>
-           <item row="0" column="3">
+           <item row="0" column="4">
             <widget class="QPushButton" name="enterBtn">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
@@ -441,24 +561,11 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>Enter</string>
+              <string>↵</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="0">
-            <widget class="QPushButton" name="ctrlBtn">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Ctrl</string>
-             </property>
-            </widget>
-           </item>
-           <item row="0" column="2">
+           <item row="0" column="3">
             <widget class="QPushButton" name="spaceBtn">
              <property name="text">
               <string>Space</string>
@@ -466,7 +573,7 @@
             </widget>
            </item>
            <item row="0" column="1">
-            <widget class="QPushButton" name="tabBtn">
+            <widget class="QPushButton" name="hideBtn">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                <horstretch>0</horstretch>
@@ -474,7 +581,7 @@
               </sizepolicy>
              </property>
              <property name="text">
-              <string>Tab</string>
+              <string>▼</string>
              </property>
             </widget>
            </item>
@@ -485,6 +592,13 @@
       </layout>
      </widget>
      <widget class="QWidget" name="page_8"/>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="showBtn">
+     <property name="text">
+      <string>▲</string>
+     </property>
     </widget>
    </item>
   </layout>

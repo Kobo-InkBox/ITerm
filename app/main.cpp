@@ -36,6 +36,20 @@ int main(int argc, char **argv)
 
     centralWidget.setLayout(&layout);
     win.setCentralWidget(&centralWidget);
+
+    QString stylesheetFileString;
+    if(std::getenv("STYLESHEET") != NULL) {
+        stylesheetFileString = std::getenv("STYLESHEET");
+    }
+    else {
+        stylesheetFileString = "/etc/eink.qss";
+    }
+
+    QFile stylesheetFile(stylesheetFileString);
+    stylesheetFile.open(QFile::ReadOnly);
+    win.setStyleSheet(stylesheetFile.readAll());
+    stylesheetFile.close();
+
     win.show();
 
     qvterm.start();
@@ -74,6 +88,7 @@ int main(int argc, char **argv)
     });
 
     QObject::connect(&virtualKeyboard, &virtualkeyboard::pressKey, [&qvterm, &virtualKeyboard]() {
+        qvterm.setFocus();
         if(virtualKeyboard.currentKeyboardModifier == Qt::ShiftModifier) {
             virtualKeyboard.currentText = virtualKeyboard.currentText.toUpper();
         }
