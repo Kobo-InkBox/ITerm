@@ -13,7 +13,7 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
     ui->showBtn->hide();
 
     this->setFont(QFont("Inter"));
-    deviceID = QString(std::getenv("DEVICE_CODENAME"));
+    deviceID = QString(std::getenv("DEVICE"));
 
     embed = false;
 
@@ -59,7 +59,7 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
     ui->shiftBtn->setProperty("type", "borderless");
     ui->ctrlBtn->setProperty("type", "borderless");
     ui->escBtn->setProperty("type", "borderless");
-    ui->pipeBtn->setProperty("type", "borderless");
+    ui->slashBtn->setProperty("type", "borderless");
     ui->homeBtn->setProperty("type", "borderless");
     ui->leftArrowBtn->setProperty("type", "borderless");
     ui->upArrowBtn->setProperty("type", "borderless");
@@ -77,7 +77,7 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
     connect(ui->enterBtn, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_Return; currentKeyboardModifier = Qt::NoModifier; currentText = ""; emit pressKey(); resetCtrl(); });
     connect(ui->tabBtn, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_Space; currentKeyboardModifier = Qt::NoModifier; currentText = "\t"; emit pressKey(); });
     connect(ui->escBtn, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_Escape; currentKeyboardModifier = Qt::NoModifier; currentText = ""; emit pressKey(); });
-    connect(ui->pipeBtn, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_Space; currentKeyboardModifier = Qt::NoModifier; currentText = "|"; emit pressKey(); });
+    connect(ui->slashBtn, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_Space; currentKeyboardModifier = Qt::NoModifier; currentText = "/"; emit pressKey(); });
     connect(ui->homeBtn, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_Home, currentKeyboardModifier = Qt::NoModifier; currentText = ""; emit pressKey(); });
     connect(ui->leftArrowBtn, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_Left, currentKeyboardModifier = Qt::NoModifier; currentText = ""; emit pressKey(); });
     connect(ui->upArrowBtn, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_Up, currentKeyboardModifier = Qt::NoModifier; currentText = ""; emit pressKey(); });
@@ -112,7 +112,7 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
     connect(ui->li, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_I; currentKeyboardModifier = (ctrl) ? Qt::ControlModifier : (shift) ? Qt::ShiftModifier : Qt::NoModifier; currentText = (specialCharacters) ? "(" : "i"; emit pressKey(); resetCtrl(); });
     connect(ui->lj, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_J; currentKeyboardModifier = (ctrl) ? Qt::ControlModifier : (shift) ? Qt::ShiftModifier : Qt::NoModifier; currentText = (specialCharacters) ? "," : "j"; emit pressKey(); resetCtrl(); });
     connect(ui->lk, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_K; currentKeyboardModifier = (ctrl) ? Qt::ControlModifier : (shift) ? Qt::ShiftModifier : Qt::NoModifier; currentText = (specialCharacters) ? "_" : "k"; emit pressKey(); resetCtrl(); });
-    connect(ui->ll, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_L; currentKeyboardModifier = (ctrl) ? Qt::ControlModifier : (shift) ? Qt::ShiftModifier : Qt::NoModifier; currentText = (specialCharacters) ? "/" : "l"; emit pressKey(); resetCtrl(); });
+    connect(ui->ll, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_L; currentKeyboardModifier = (ctrl) ? Qt::ControlModifier : (shift) ? Qt::ShiftModifier : Qt::NoModifier; currentText = (specialCharacters) ? "|" : "l"; emit pressKey(); resetCtrl(); });
     connect(ui->lm, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_M; currentKeyboardModifier = (ctrl) ? Qt::ControlModifier : (shift) ? Qt::ShiftModifier : Qt::NoModifier; currentText = (specialCharacters) ? ">" : "m"; emit pressKey(); resetCtrl(); });
     connect(ui->ln, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_N; currentKeyboardModifier = (ctrl) ? Qt::ControlModifier : (shift) ? Qt::ShiftModifier : Qt::NoModifier; currentText = (specialCharacters) ? "<" : "n"; emit pressKey(); resetCtrl(); });
     connect(ui->lo, &QPushButton::clicked, this, [this]() { currentKey = Qt::Key_O; currentKeyboardModifier = (ctrl) ? Qt::ControlModifier : (shift) ? Qt::ShiftModifier : Qt::NoModifier; currentText = (specialCharacters) ? ")" : "o"; emit pressKey(); resetCtrl(); });
@@ -172,7 +172,7 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
         ui->ctrlBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->escBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->tabBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
-        ui->pipeBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
+        ui->slashBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->homeBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->leftArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->upArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
@@ -181,8 +181,8 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
         ui->rightArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->pageUpBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->pageDownBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
-        ui->hideBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 20px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; border: 1px solid black");
-        ui->showBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 20px; padding-bottom: 20px; padding-left: 25px; padding-right: 25px; border: 1px solid black");
+        ui->hideBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 19.5px; padding-bottom: 19.5px; padding-left: 25px; padding-right: 25px; border: 1px solid black");
+        ui->showBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 19.5px; padding-bottom: 19.5px; padding-left: 25px; padding-right: 25px; border: 1px solid black");
         ui->spt->setStyleSheet("font-weight: bold; font-size: 9pt; padding: 27px");
         ui->sat->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 27px");
         ui->spaceBtn->setStyleSheet("font-weight: bold; font-size: 9pt; padding: 15px; border: 1px solid black");
@@ -232,7 +232,7 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
         ui->ctrlBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->escBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->tabBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
-        ui->pipeBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
+        ui->slashBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->homeBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->leftArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
         ui->upArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 15px; border: 1px solid black");
@@ -292,7 +292,7 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
         ui->ctrlBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->escBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->tabBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
-        ui->pipeBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
+        ui->slashBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->homeBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->leftArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->upArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
@@ -301,7 +301,7 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
         ui->rightArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->pageUpBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->pageDownBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
-        ui->hideBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; border: 1px solid black");
+        ui->hideBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 12px; padding-bottom: 12px; padding-left: 20px; padding-right: 20px; border: 1px solid black");
         ui->showBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; border: 1px solid black");
         ui->spt->setStyleSheet("font-weight: bold; font-size: 8pt; padding: 11.45px");
         ui->sat->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 11.45px");
@@ -352,7 +352,7 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
         ui->ctrlBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->escBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->tabBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
-        ui->pipeBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
+        ui->slashBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->homeBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->leftArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->upArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
@@ -361,8 +361,8 @@ virtualkeyboard::virtualkeyboard(QWidget *parent) :
         ui->rightArrowBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->pageUpBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
         ui->pageDownBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 10px; border: 1px solid black");
-        ui->hideBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; border: 1px solid black");
-        ui->showBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 15px; padding-bottom: 15px; padding-left: 20px; padding-right: 20px; border: 1px solid black");
+        ui->hideBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 13px; padding-bottom: 13px; padding-left: 20px; padding-right: 20px; border: 1px solid black");
+        ui->showBtn->setStyleSheet("font-weight: bold; font-size: 7pt; padding-top: 10px; padding-bottom: 10px; padding-left: 20px; padding-right: 20px; border: 1px solid black");
         ui->spt->setStyleSheet("font-weight: bold; font-size: 9pt; padding: 13px");
         ui->sat->setStyleSheet("font-weight: bold; font-size: 7pt; padding: 13px");
         ui->spaceBtn->setStyleSheet("font-weight: bold; font-size: 9pt; padding: 10px; border: 1px solid black");
@@ -540,7 +540,7 @@ void virtualkeyboard::reverseKeys(keyboardMode keyboardMode) {
         ui->lh->setText("?");
         ui->lj->setText(",");
         ui->lk->setText("_");
-        ui->ll->setText("/");
+        ui->ll->setText("|");
         ui->lz->setText("~");
 
         ui->lx->setText("{");
