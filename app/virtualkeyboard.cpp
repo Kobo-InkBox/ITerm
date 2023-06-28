@@ -582,7 +582,7 @@ void virtualkeyboard::adjust_size_function() {
             }
         }
         else {
-            keyboardScaleFactor = 100 * (1.6 * ui->showBtn->size().height()) / QGuiApplication::screens()[0]->size().height();
+            keyboardScaleFactor = 100 * (1.8 * ui->showBtn->size().height()) / QGuiApplication::screens()[0]->size().height();
         }
         this->setFixedHeight(QGuiApplication::screens()[0]->size().height() * keyboardScaleFactor / 100);
         this->setFixedWidth(QGuiApplication::screens()[0]->size().width());
