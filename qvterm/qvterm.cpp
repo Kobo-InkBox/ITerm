@@ -162,7 +162,11 @@ QVTerm::QVTerm(QWidget *parent) :
     setFrameStyle(QFrame::NoFrame);
     setAttribute(Qt::WA_OpaquePaintEvent);
 
-    setFont(QFont("Roboto Mono", 7));
+    int fontSize = std::atoi(getenv("TERMINAL_FONT_SIZE"));
+    if(fontSize == NULL) {
+        fontSize = 7;
+    }
+    setFont(QFont("Roboto Mono", fontSize));
     setFocus();
 
     VTermState *vts = vterm_obtain_state(m_vterm);
